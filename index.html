@@ -102,6 +102,99 @@
 
     // Start your code here
     // You may move this JS to another file if you wish
+
+    // Console Log
+    errorBtns[0].addEventListener('click', (event) => {
+      console.log('Console Log Demo');
+    });
+
+    // Console Error
+    errorBtns[1].addEventListener('click', (event) => {
+      console.error('Console Error Demo');
+    });
+
+    // Console Count
+    errorBtns[2].addEventListener('click', (event) => {
+      console.count('Count Button');
+    });
+
+    // Console Warn
+    errorBtns[3].addEventListener('click', (event) => {
+      console.warn('Console Warn Button');
+    });
+
+    // Console Assert
+    errorBtns[4].addEventListener('click', (event) => {
+      const errorMsg = 'The number does not equal 3';
+      const number = 2;
+      console.assert(2 === 3, '%o', {number, errorMsg});
+    });
+
+    // Console Clear
+    errorBtns[5].addEventListener('click', (event) => {
+      console.clear();
+    });
+
+    // Console Dir
+    errorBtns[6].addEventListener('click', (event) => {
+      console.dir(errorBtns[6]);
+    });
+
+    // Console dirxml
+    errorBtns[7].addEventListener('click', (event) => {
+      console.dirxml(errorBtns[7]);
+    });
+
+    // Console Group Start
+    errorBtns[8].addEventListener('click', (event) => {
+      console.group();
+    });
+
+    // Console Group End
+    errorBtns[9].addEventListener('click', (event) => {
+      console.groupEnd();
+    });
+
+    // Console Table
+    errorBtns[10].addEventListener('click', (event) => {
+      console.table([['BTS', 'RM, Jin, Suga, J-Hope, Jimin, V, Jungkook'], ['Blackpink', 'Jisoo, Jennie, Rose, Lisa']],);
+    });
+
+    // Start Timer
+    errorBtns[11].addEventListener('click', (event) => {
+      console.time('Timer Button');
+    })
+
+    // End Timer
+    errorBtns[12].addEventListener('click', (event) => {
+      console.timeEnd('Timer Button');
+    });
+
+    // Console Trace
+    errorBtns[13].addEventListener('click', (event) => {
+      // DON'T FORGET TO DO THIS
+
+
+
+
+
+
+
+
+
+
+
+      
+      console.trace();
+    });
+
+    // Console Trigger a Global Error
+    errorBtns[14].addEventListener('click', (event) => {
+      window.addEventListener('error', (e) => {
+        console.log('There is an error');
+      });
+    });
+
   </script>
 </body>
 
