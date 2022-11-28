@@ -173,19 +173,10 @@
     // Console Trace
     errorBtns[13].addEventListener('click', (event) => {
       // DON'T FORGET TO DO THIS 
-
-
-
-
-
-
-
-
-
-
-
-
-      console.trace();
+      const deep = () => {deeper()};
+      const deeper = () => {deepest()};
+      const deepest = () => {console.trace()};
+      deep();
     });
 
     // Console Trigger a Global Error
@@ -194,6 +185,42 @@
         console.log('There is an error');
       });
     });
+
+    // Step 3
+    try {
+      var divByString = 5/"A";
+      if (isNaN(divByString)) {
+        throw "cannot divide by a string"
+      }
+    } catch(err) {
+      alert("You " + err);
+    } finally {
+      alert("It's the effort that counts.")
+    }
+
+    // Step 4
+    class MismatchedArithmeticError extends Error {
+      constructor(message) {
+        super(message);
+        this.name = "MismatchedArithmeticError";
+      }
+    }
+
+    function test() {
+      throw new MismatchedArithmeticError("Check your math");
+    }
+
+
+    try {
+      test();
+    } catch (err) {
+      if (err instanceof MismatchedArithmeticError){
+        alert(err.message);
+      }
+    }
+
+
+
 
   </script>
 </body>
