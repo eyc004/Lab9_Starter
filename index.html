@@ -178,13 +178,20 @@
       const deepest = () => {console.trace()};
       deep();
     });
-
+  
+    function toTriggerGlobalError() {
+      var numerator = 2;
+      var divisor = "B";
+      var x = numerator/divisor;
+    }
     // Console Trigger a Global Error
     errorBtns[14].addEventListener('click', (event) => {
-      window.addEventListener('error', (e) => {
-        console.log('There is an error');
-      });
+      HELLO();
     });
+
+    window.onerror = function(message, url, line, col, error) {
+      console.log("HELLO");
+    };
 
     // Step 3
     try {
@@ -193,9 +200,9 @@
         throw "cannot divide by a string"
       }
     } catch(err) {
-      alert("You " + err);
+      console.log("You " + err);
     } finally {
-      alert("It's the effort that counts.")
+      console.log("It's the effort that counts.")
     }
 
     // Step 4
@@ -210,19 +217,27 @@
       throw new MismatchedArithmeticError("Check your math");
     }
 
-
     try {
       test();
     } catch (err) {
       if (err instanceof MismatchedArithmeticError){
-        alert(err.message);
+        console.log(err.message);
       }
     }
 
-
-
-
+    window.TrackJS && TrackJS.install({ 
+    token: "24d0684047a54f91a3c7a1ad2e193f39"
+    // for more configuration options, see https://docs.trackjs.com
+  });
   </script>
+  <script src="https://cdn.trackjs.com/agent/v3/latest/t.js"></script>
+  <script>
+    window.TrackJS && TrackJS.install({ 
+      token: "24d0684047a54f91a3c7a1ad2e193f39"
+      // for more configuration options, see https://docs.trackjs.com
+    });
+  </script>
+                          
 </body>
 
 </html>
